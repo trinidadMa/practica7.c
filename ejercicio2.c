@@ -1,16 +1,15 @@
 #include <stdio.h>
-void despliega_juego(char* nombre_archivo_figura);
+void despliegaAhorcado(char* nombreArchivoFigura);
 int main(){
-despliega_juego("figura_5.txt");
-  return 0;
-}
-void despliega_juego(char* nombre_archivo_figura) {
-    FILE* arch = fopen(nombre_archivo_figura, "r");
-    if (arch == NULL) {
-        printf("no es posible abrir el archivo %s\n", nombre_archivo_figura);
-        return;}
+despliegaAhorcado("figura_5.txt");
+  return 0;}
+void despliegaAhorcado(char* nombreArchivoFigura) {
+    FILE* archivo = fopen(nombreArchivoFigura, "r");
+    if (archivo == NULL) {
+        printf("No se puede abrir el archivo %s\n", nombreArchivoFigura);
+        return; }
     char linea[100];
-    while (fgets(linea, sizeof(linea), arch)) {
-        printf("%s", linea);}
-    fclose(arch);
+    while (fgets(linea, sizeof(linea), archivo)) {
+        printf("%s", linea); }
+    fclose(archivo);
 }
